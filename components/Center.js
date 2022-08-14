@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 import { shuffle } from "lodash";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { playlistIdState, playlistState } from "../atoms/playlistAtom";
+import useSpotify from "../hooks/useSpotify";
+import Songs from "./Songs";
 
 const colors = [
   "from-indigo-500",
@@ -14,19 +18,34 @@ const colors = [
 ];
 
 export default function Center() {
+  const spotifyApi = useSpotify();
   const { data: session } = useSession();
   const [color, setColor] = useState(null);
+  const playlistId = useRecoilValue(playlistIdState);
+  const [playlist, setPlaylist] = useRecoilState(playlistState);
 
   useEffect(() => {
     setColor(shuffle(colors).pop());
-  }, []);
+  }, [playlistId]);
+
+  useEffect(() => {
+    spotifyApi
+      .getPlaylist(playlistId)
+      .then((data) => {
+        setPlaylist(data.body);
+      })
+      .catch((error) => console.log("Something went wrong!", error));
+  }, [spotifyApi, playlistId]);
+
+  console.log(playlist);
 
   return (
-    <div className="flex-grow">
+    <div className="flex-grow h-screen overflow-y-scroll scrollbar-hide">
       <header className="absolute top-5 right-8">
         <div
-          className="flex items-center bg-green-100 space-x-3 opacity-90 
-        hover:opacity-80 cursor-pointer rounded-full p-1 pr-2"
+          className="flex items-center bg-black space-x-3 opacity-90 
+        hover:opacity-80 cursor-pointer rounded-full p-1 pr-2 text-white"
+          onClick={signOut}
         >
           <img
             className="rounded-full w-10 h-10"
@@ -41,6 +60,10 @@ export default function Center() {
         className={`flex items-end space-x-7 bg-gradient-to-b to-black ${color} h-80 text-white p-8 `}
       ></section>
       Center
+        </div>
+      </section>
+
+      <Songs />
     </div>
   );
 }
