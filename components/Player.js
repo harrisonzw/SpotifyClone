@@ -73,7 +73,7 @@ function Player() {
   const debouncedAdjustVolume = useCallback(
     debounce((volume) => {
       spotifyApi.setVolume(volume).catch((error) => {});
-    }, 500),
+    }, 300),
     []
   );
 
@@ -86,7 +86,7 @@ function Player() {
     >
       <div className="flex items-center space-x-4">
         <img
-          className="hidden md:inline h-10 w-10"
+          className="hidden md:inline h-12 w-12"
           src={songInfo?.album?.images?.[0]?.url}
           alt=""
         />
@@ -97,8 +97,10 @@ function Player() {
       </div>
 
       <div className="flex items-center justify-evenly">
-        <SwitchHorizontalIcon className="button" />
-        <RewindIcon className="button" />
+        <RewindIcon
+          onClick={() => spotifyApi.skipToPrevious()}
+          className="button w-7 h-7"
+        />
 
         {isPlaying ? (
           <PauseIcon onClick={handlePlayPause} className="button w-10 h-10" />
@@ -108,9 +110,8 @@ function Player() {
 
         <FastForwardIcon
           onClick={() => spotifyApi.skipToNext()}
-          className="button"
+          className="button w-7 h-7"
         />
-        <ReplyIcon className="button" />
       </div>
 
       <div className="flex items-center space-x-3 md:space-x-4 justify-end pr-5">
