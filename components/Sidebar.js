@@ -64,7 +64,7 @@ function Sidebar() {
             onClick={() => setPlaylistId(playlist.id)}
             className="cursor-pointer hover:text-white"
           >
-            {playlist.name}
+            {playlist.name !== "Starred" ? playlist.name : ""}
           </p>
         ))}
       </div>
