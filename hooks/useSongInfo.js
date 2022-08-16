@@ -24,7 +24,6 @@ function useSongInfo() {
       }
     };
 
-    console.log("song, ", songInfo);
     fetchSongInfo();
   }, [currentTrackID, spotifyApi]);
 
