@@ -13,7 +13,8 @@ Spotify API for user authentication, fetching playlists, play/pause and volume c
 Vercel for web hosting and deployment
 
 App Screenshots
-![Screen Shot 2022-08-16 at 6 22 41 PM](https://user-images.githubusercontent.com/23245057/184995638-e6eabe77-8608-4ee7-a3f7-5ed8e35b0940.png)
+
+![Screen Shot 2022-08-16 at 6 27 03 PM](https://user-images.githubusercontent.com/23245057/184995946-363df7ee-1ddb-468b-8a58-6da589cd4dbc.png)
 
 ![Screen Shot 2022-08-16 at 6 23 48 PM](https://user-images.githubusercontent.com/23245057/184995630-0ae9a194-dd9c-4175-9e4d-3e3b9e171151.png)
 
