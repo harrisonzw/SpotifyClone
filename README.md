@@ -1,3 +1,30 @@
+This is a web app to control your Spotify music player built using Spotify's API. 
+Current features include:
+
+-The user can login using their spotify account and see their playlists.
+
+-The user can select a song from their playlist and play the song if they have Spotify Premium.
+ 
+ *user must have the spotify app opened on their phone or computer for the music player to work.
+
+Technologies used:
+React + Next.js for frontend development.
+
+Tailwind CSS for styling and responsive design.
+
+Recoil for global state management.
+
+Spotify API for user authentication, fetching playlists, play/pause and volume control.
+
+Vercel for web hosting and deployment
+
+App Screenshots:
+
+![Screen Shot 2022-08-16 at 6 27 03 PM](https://user-images.githubusercontent.com/23245057/184995946-363df7ee-1ddb-468b-8a58-6da589cd4dbc.png)
+
+![Screen Shot 2022-08-16 at 6 23 48 PM](https://user-images.githubusercontent.com/23245057/184995630-0ae9a194-dd9c-4175-9e4d-3e3b9e171151.png)
+
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
