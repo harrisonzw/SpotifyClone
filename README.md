@@ -1,18 +1,24 @@
 This is a web app to control your Spotify music player built using Spotify's API. 
 Current features include:
+
 -The user can login using their spotify account and see their playlists.
+
 -The user can select a song from their playlist and play the song if they have Spotify Premium.
-*user must have the spotify app opened on their phone or computer for the music player to work.
-*Please send me your Spotify Account Email if you wish to test it out.
+ 
+ *user must have the spotify app opened on their phone or computer for the music player to work.
 
 Technologies used:
 React + Next.js for frontend development.
-Tailwind CSS for styling and responsive design
-Recoil for global state management
+
+Tailwind CSS for styling and responsive design.
+
+Recoil for global state management.
+
 Spotify API for user authentication, fetching playlists, play/pause and volume control.
+
 Vercel for web hosting and deployment
 
-App Screenshots
+App Screenshots:
 
 ![Screen Shot 2022-08-16 at 6 27 03 PM](https://user-images.githubusercontent.com/23245057/184995946-363df7ee-1ddb-468b-8a58-6da589cd4dbc.png)
 
